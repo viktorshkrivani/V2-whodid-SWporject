@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="292.0" prefWidth="465.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.whodid.Badlogin">
+   <children>
+      <ImageView fitHeight="292.0" fitWidth="355.0" layoutX="148.0">
+         <image>
+            <Image url="@../../../images/monsterwindow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="126.0" layoutX="22.0" layoutY="13.0">
+         <image>
+            <Image url="@../../../images/Group 6.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="badlogintryagain" layoutX="14.0" layoutY="219.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="126.0">
+               <image>
+                  <Image url="@../../../images/tryagainbtn.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

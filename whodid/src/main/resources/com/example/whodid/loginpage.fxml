@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="607.0" prefWidth="1017.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.whodid.Loginpage">
+   <children>
+      <Button fx:id="instructionsbtn" layoutX="419.0" layoutY="523.0" mnemonicParsing="false" onAction="#oninstructionbtnClick" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="160.0">
+               <image>
+                  <Image url="@../../../images/instrubutton.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="startbtn" layoutX="419.0" layoutY="466.0" mnemonicParsing="false" onAction="#startgame" prefHeight="38.0" prefWidth="158.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="56.0" fitWidth="160.0">
+               <image>
+                  <Image url="@../../../images/startbtn.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="pickhardbtn" layoutX="445.0" layoutY="301.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="104.0">
+               <image>
+                  <Image url="@../../../images/hardbtn.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="pickeasybtn" layoutX="444.0" layoutY="215.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="109.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="105.0">
+               <image>
+                  <Image url="@../../../images/esaybtn.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="pickmedbtn" layoutX="444.0" layoutY="259.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="110.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="106.0">
+               <image>
+                  <Image url="@../../../images/medbtn.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="19.0" fitWidth="160.0" layoutX="428.0" layoutY="408.0">
+         <image>
+            <Image url="@../../../images/ADDPINTOconnect.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="160.0" layoutX="427.0" layoutY="430.0">
+         <image>
+            <Image url="@../../../images/emptypin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="173.0" fitWidth="502.0" layoutX="264.0" layoutY="-3.0">
+         <image>
+            <Image url="@../../../images/loginquestionmark.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="81.0" layoutX="62.0" layoutY="33.0">
+         <image>
+            <Image url="@../../../images/sound.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="284.0" layoutX="106.0" layoutY="430.0">
+         <image>
+            <Image url="@../../../images/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="81.0" layoutX="867.0" layoutY="33.0">
+         <image>
+            <Image url="@../../../images/Music.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="350.0" fitWidth="284.0" layoutX="623.0" layoutY="173.0">
+         <image>
+            <Image url="@../../../images/window.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="350.0" fitWidth="284.0" layoutX="106.0" layoutY="173.0">
+         <image>
+            <Image url="@../../../images/window.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="264.0" fitWidth="398.0" layoutX="20.0" layoutY="166.0">
+         <image>
+            <Image url="@../../../images/fightingcharacter.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="255.0" fitWidth="309.0" layoutX="596.0" layoutY="175.0">
+         <image>
+            <Image url="@../../../images/monsterwindow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="280.0" layoutX="625.0" layoutY="430.0">
+         <image>
+            <Image url="@../../../images/name.png" />
+         </image>
+      </ImageView>
+      <ToggleButton fx:id="offSound" layoutX="150.0" layoutY="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: black;" text="OFF" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </ToggleButton>
+      <ToggleButton fx:id="offMusic" layoutX="809.0" layoutY="32.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: red;" text="OFF" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </ToggleButton>
+      <PasswordField fx:id="pin" alignment="CENTER" layoutX="428.0" layoutY="432.0" prefHeight="36.0" prefWidth="157.0" promptText="PIN" style="-fx-background-color: transparent;">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </PasswordField>
+      <TextField fx:id="playername" alignment="CENTER" layoutX="108.0" layoutY="433.0" prefHeight="86.0" prefWidth="279.0" promptText="NAME PLAYER" style="-fx-background-color: transparent;">
+         <font>
+            <Font name="Impact" size="43.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="monstername" alignment="CENTER" layoutX="626.0" layoutY="433.0" prefHeight="86.0" prefWidth="279.0" promptText="NAME MONSTER" style="-fx-background-color: transparent;">
+         <font>
+            <Font name="Impact" size="38.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

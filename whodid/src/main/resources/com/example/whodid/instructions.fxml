@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="508.0" prefWidth="768.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.whodid.Instructions">
+   <children>
+      <Button fx:id="instructionbackbtn" layoutX="113.0" layoutY="502.0" mnemonicParsing="false" onAction="#oninstructionbtnClick" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="68.0">
+               <image>
+                  <Image url="@../../../images/backbtn.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="43.0" fitWidth="44.0" layoutX="426.0" layoutY="459.0">
+         <image>
+            <Image url="@../../../images/coin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="59.0" layoutX="639.0" layoutY="493.0">
+         <image>
+            <Image url="@../../../images/questionmark.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="110.0" layoutX="116.0" layoutY="282.0">
+         <image>
+            <Image url="@../../../images/drinkbtn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="89.0" layoutX="490.0" layoutY="461.0">
+         <image>
+            <Image url="@../../../images/GOLD.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="200.0" layoutX="320.0" layoutY="33.0">
+         <image>
+            <Image url="@../../../images/instructions.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="110.0" layoutX="114.0" layoutY="217.0">
+         <image>
+            <Image url="@../../../images/rightbtn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="200.0" layoutX="490.0" layoutY="351.0">
+         <image>
+            <Image url="@../../../images/runcHANGE.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="110.0" layoutX="351.0" layoutY="217.0">
+         <image>
+            <Image url="@../../../images/upsighn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="110.0" layoutX="352.0" layoutY="282.0">
+         <image>
+            <Image url="@../../../images/runbtn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="110.0" layoutX="350.0" layoutY="164.0">
+         <image>
+            <Image url="@../../../images/startbtn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="89.0" layoutX="491.0" layoutY="412.0">
+         <image>
+            <Image url="@../../../images/energy.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="110.0" layoutX="232.0" layoutY="163.0">
+         <image>
+            <Image url="@../../../images/pinnumber.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="110.0" layoutX="114.0" layoutY="163.0">
+         <image>
+            <Image url="@../../../images/nameplayer.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="110.0" layoutX="348.0" layoutY="108.0">
+         <image>
+            <Image url="@../../../images/hardbtn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="579.0" fitWidth="69.0">
+         <image>
+            <Image url="@../../../images/greenline.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="110.0" layoutX="232.0" layoutY="108.0">
+         <image>
+            <Image url="@../../../images/medbtn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="200.0" layoutX="491.0" layoutY="167.0">
+         <image>
+            <Image url="@../../../images/loginsteps.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="44.0" layoutX="426.0" layoutY="403.0">
+         <image>
+            <Image url="@../../../images/energy-drink.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="200.0" layoutX="491.0" layoutY="222.0">
+         <image>
+            <Image url="@../../../images/directionS.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="110.0" layoutX="232.0" layoutY="217.0">
+         <image>
+            <Image url="@../../../images/downbtn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="200.0" layoutX="491.0" layoutY="115.0">
+         <image>
+            <Image url="@../../../images/LEVELDIFFICULTY.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="200.0" layoutX="490.0" layoutY="287.0">
+         <image>
+            <Image url="@../../../images/drinkcollect.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="110.0" layoutX="235.0" layoutY="282.0">
+         <image>
+            <Image url="@../../../images/fightbtn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="110.0" layoutX="113.0" layoutY="108.0">
+         <image>
+            <Image url="@../../../images/esaybtn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="200.0" layoutX="490.0" layoutY="322.0">
+         <image>
+            <Image url="@../../../images/fightthemonster.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
