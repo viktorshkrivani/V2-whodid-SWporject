@@ -5,26 +5,44 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="292.0" prefWidth="465.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.whodid.Badlogin">
+<AnchorPane prefHeight="302.0" prefWidth="591.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.whodid.Badlogin">
    <children>
-      <ImageView fitHeight="292.0" fitWidth="355.0" layoutX="148.0">
+      <ImageView fitHeight="302.0" fitWidth="367.0" layoutX="224.0">
          <image>
             <Image url="@../../../images/monsterwindow.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="126.0" layoutX="22.0" layoutY="13.0">
+      <ImageView fitHeight="200.0" fitWidth="126.0" layoutX="110.0" layoutY="-9.0">
          <image>
             <Image url="@../../../images/Group 6.png" />
          </image>
       </ImageView>
-      <Button fx:id="badlogintryagain" layoutX="14.0" layoutY="219.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+      <Button fx:id="badlogintryagain" layoutX="102.0" layoutY="242.0" mnemonicParsing="false" onAction="#retry" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="40.0" fitWidth="126.0">
+            <ImageView fx:id="retrybtn" fitHeight="40.0" fitWidth="126.0">
                <image>
                   <Image url="@../../../images/tryagainbtn.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
+      <Button fx:id="okbtn" layoutX="98.0" layoutY="191.0" mnemonicParsing="false" onAction="#addcredentials" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="128.0">
+               <image>
+                  <Image url="@../../../images/register.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="374.0" fitWidth="202.0" layoutX="-126.0" layoutY="-72.0">
+         <image>
+            <Image url="@../../../images/Rectangle%20156.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="48.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../images/questionmark.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

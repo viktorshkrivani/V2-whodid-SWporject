@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="607.0" prefWidth="1017.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.whodid.MainClass">
    <children>
-      <Button fx:id="drinkbtn" layoutX="88.0" layoutY="402.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+      <Button fx:id="drinkbtn" layoutX="88.0" layoutY="402.0" mnemonicParsing="false" onAction="#collectenergy" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="119.0" fitWidth="124.0">
                <image>
@@ -18,7 +18,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="runbtn" layoutX="218.0" layoutY="404.0" mnemonicParsing="false" prefHeight="102.0" prefWidth="140.0" style="-fx-background-color: transparent;">
+      <Button fx:id="runbtn" layoutX="218.0" layoutY="404.0" mnemonicParsing="false" onAction="#runaway" prefHeight="102.0" prefWidth="140.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="118.0" fitWidth="127.0">
                <image>
@@ -27,7 +27,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="rightbtn" layoutX="351.0" layoutY="402.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="154.0" style="-fx-background-color: transparent;">
+      <Button fx:id="rightbtn" layoutX="351.0" layoutY="402.0" mnemonicParsing="false" onAction="#rightdirection" prefHeight="69.0" prefWidth="154.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="55.0" fitWidth="137.0">
                <image>
@@ -36,7 +36,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="leftbtn" layoutX="351.0" layoutY="466.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="154.0" style="-fx-background-color: transparent;">
+      <Button fx:id="leftbtn" layoutX="351.0" layoutY="466.0" mnemonicParsing="false" onAction="#leftdirection" prefHeight="54.0" prefWidth="154.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="54.0" fitWidth="137.0">
                <image>
@@ -45,7 +45,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="upbtn" layoutX="496.0" layoutY="405.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="158.0" style="-fx-background-color: transparent;">
+      <Button fx:id="upbtn" layoutX="496.0" layoutY="405.0" mnemonicParsing="false" onAction="#updirection" prefHeight="56.0" prefWidth="158.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="55.0" fitWidth="140.0">
                <image>
@@ -54,7 +54,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="downbtn" layoutX="497.0" layoutY="466.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="156.0" style="-fx-background-color: transparent;">
+      <Button fx:id="downbtn" layoutX="497.0" layoutY="466.0" mnemonicParsing="false" onAction="#downdirection" prefHeight="56.0" prefWidth="156.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="54.0" fitWidth="140.0">
                <image>
@@ -63,7 +63,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="fightbtn" layoutX="643.0" layoutY="404.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="145.0" style="-fx-background-color: transparent;">
+      <Button fx:id="fightbtn" layoutX="643.0" layoutY="404.0" mnemonicParsing="false" onAction="#fightmonster" prefHeight="123.0" prefWidth="145.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="119.0" fitWidth="133.0">
                <image>
@@ -72,7 +72,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="helpbtn" layoutX="782.0" layoutY="404.0" mnemonicParsing="false" prefHeight="126.0" prefWidth="154.0" style="-fx-background-color: transparent;">
+      <Button fx:id="helpbtn" layoutX="782.0" layoutY="404.0" mnemonicParsing="false" onAction="#gethelp" prefHeight="126.0" prefWidth="154.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="121.0" fitWidth="131.0">
                <image>
@@ -83,7 +83,7 @@
       </Button>
       <Button fx:id="exitbtn" layoutX="14.0" layoutY="540.0" mnemonicParsing="false" onAction="#exitgame" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="34.0" fitWidth="52.0">
+            <ImageView fitHeight="43.0" fitWidth="65.0">
                <image>
                   <Image url="@../../../images/backbtn.png" />
                </image>
@@ -120,17 +120,17 @@
             <Image url="@../../../images/statslbl.png" />
          </image>
       </ImageView>
-      <Label fx:id="playernamelbl" alignment="CENTER" layoutX="929.0" layoutY="85.0" prefHeight="18.0" prefWidth="63.0" text="name" textAlignment="CENTER">
+      <Label fx:id="playernamelbl" alignment="CENTER" layoutX="929.0" layoutY="85.0" onDragDetected="#username" prefHeight="18.0" prefWidth="63.0" text="name" textAlignment="CENTER">
          <font>
             <Font name="Impact" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="coinslbl" alignment="CENTER_RIGHT" layoutX="713.0" layoutY="555.0" prefHeight="18.0" prefWidth="63.0" text="XXX" textAlignment="CENTER">
+      <Label fx:id="coinslbl" alignment="CENTER_RIGHT" layoutX="713.0" layoutY="555.0" onDragDetected="#goldcollected" prefHeight="18.0" prefWidth="63.0" text="XXX" textAlignment="CENTER">
          <font>
             <Font name="Impact" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="energylbl" alignment="CENTER_RIGHT" layoutX="834.0" layoutY="555.0" prefHeight="18.0" prefWidth="63.0" text="XXX" textAlignment="CENTER">
+      <Label fx:id="energylbl" alignment="CENTER_RIGHT" layoutX="834.0" layoutY="555.0" onDragDetected="#energycollected" prefHeight="18.0" prefWidth="63.0" text="XXX" textAlignment="CENTER">
          <font>
             <Font name="Impact" size="15.0" />
          </font>

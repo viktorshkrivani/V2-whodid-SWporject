@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="607.0" prefWidth="1017.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.whodid.Loginpage">
+<AnchorPane layoutX="0.5" layoutY="0.5" prefHeight="607.0" prefWidth="1017.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.whodid.Loginpage">
    <children>
       <Button fx:id="instructionsbtn" layoutX="419.0" layoutY="523.0" mnemonicParsing="false" onAction="#oninstructionbtnClick" style="-fx-background-color: transparent;">
          <graphic>
@@ -71,7 +71,7 @@
             <Image url="@../../../images/loginquestionmark.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="81.0" layoutX="62.0" layoutY="33.0">
+      <ImageView fitHeight="30.0" fitWidth="81.0" layoutX="108.0" layoutY="33.0">
          <image>
             <Image url="@../../../images/sound.png" />
          </image>
@@ -81,7 +81,7 @@
             <Image url="@../../../images/name.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="81.0" layoutX="867.0" layoutY="33.0">
+      <ImageView fitHeight="30.0" fitWidth="81.0" layoutX="827.0" layoutY="33.0">
          <image>
             <Image url="@../../../images/Music.png" />
          </image>
@@ -111,12 +111,12 @@
             <Image url="@../../../images/name.png" />
          </image>
       </ImageView>
-      <ToggleButton fx:id="offSound" layoutX="150.0" layoutY="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: black;" text="OFF" textFill="WHITE">
+      <ToggleButton fx:id="offSound" layoutX="108.0" layoutY="68.0" mnemonicParsing="false" onAction="#OffSound" prefHeight="31.0" prefWidth="81.0" style="-fx-background-color: black;" text="ON/OFF" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </ToggleButton>
-      <ToggleButton fx:id="offMusic" layoutX="809.0" layoutY="32.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: red;" text="OFF" textFill="WHITE">
+      <ToggleButton fx:id="offMusic" layoutX="827.0" layoutY="68.0" mnemonicParsing="false" onAction="#OffMusic" prefHeight="30.0" prefWidth="81.0" style="-fx-background-color: red;" text="ON/OFF" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
