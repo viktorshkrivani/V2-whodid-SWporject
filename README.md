@@ -13,6 +13,8 @@ Instead of walking room to room, players now spin a **slot-machine style board**
 The result is a unique survival-slot hybrid: each spin can reward you with gold, restore energy, or throw you into combat with monsters.
 
 ## Documentation 📄
+Group Presentation   
+[Presentation PowerPoint](./GR5.ppxt)
 
 Full project report (design, implementation details, and diagrams),  
 [Final Report (PDF)](./assets/finalreport.pdf)
