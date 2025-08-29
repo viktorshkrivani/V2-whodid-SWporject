@@ -1,48 +1,32 @@
 package com.example.whodid;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.sql.*;
 
-import static com.example.whodid.DatabaseConnector.fetchPlayerStats;
-
-
 public class Badlogin {
-    @javafx.fxml.FXML
-    private Button badlogintryagain;
-    @javafx.fxml.FXML
-    private ImageView retrybtn;
-    @javafx.fxml.FXML
-    private Button okbtn;
+    @FXML private Button badlogintryagain;
+    @FXML private ImageView retrybtn;
+    @FXML private Button okbtn;
 
     private String username;
     private String pin;
-    private static final String JDBC_URL = "jdbc:sqlite:credentialsdb.db";
 
-
-    @javafx.fxml.FXML
+    @FXML
     public void retry(ActionEvent actionEvent) {
         closeWindow();
     }
 
     private void closeWindow() {
-        // Get the stage (window) from any UI element in the scene
         Stage stage = (Stage) badlogintryagain.getScene().getWindow();
-
-        // Close the stage
         stage.close();
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void addcredentials(ActionEvent actionEvent) {
         saveUser(username, pin);
         closeWindow();
@@ -50,67 +34,71 @@ public class Badlogin {
 
     private void saveUser(String username, String pin) {
         try {
-            // Check constraints before saving
+            if (username == null || pin == null) return;
+
+            // Basic constraints (match your Loginpage rules)
             if (username.length() > 10 || !username.equals(username.toLowerCase())) {
                 System.out.println("Invalid username format!");
                 return;
             }
-
             if (pin.length() != 4 || !pin.matches("\\d+")) {
                 System.out.println("Invalid PIN format!");
                 return;
             }
-
-            // Check if the username already exists
             if (isUsernameExists(username)) {
                 System.out.println("Username already exists!");
                 return;
             }
 
-            try (Connection connection = DriverManager.getConnection(JDBC_URL);
-                 PreparedStatement statement = connection.prepareStatement("INSERT INTO PlayerCredentials(username, pin) VALUES (?, ?)")) {
+            try (Connection connection = DatabaseConnector.connect()) {
+                connection.setAutoCommit(false);
+                try (PreparedStatement insertCred = connection.prepareStatement(
+                        "INSERT INTO PlayerCredentials(username, pin) VALUES (?, ?)");
+                     PreparedStatement insertStats = connection.prepareStatement(
+                             "INSERT INTO PlayerStats(username, goldCollected, ranking) VALUES (?, 0, 0)")
+                ) {
+                    insertCred.setString(1, username);
+                    insertCred.setString(2, pin);
+                    insertCred.executeUpdate();
 
-                statement.setString(1, username);
-                statement.setString(2, pin);
+                    insertStats.setString(1, username);
+                    insertStats.executeUpdate();
 
-                statement.executeUpdate();
-
-                // After saving user credentials, insert a record into PlayerStats with initial values
-                insertInitialPlayerStats(connection, username);
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-                // Handle the exception appropriately
+                    connection.commit();
+                } catch (SQLException e) {
+                    connection.rollback();
+                    throw e;
+                } finally {
+                    connection.setAutoCommit(true);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     private void insertInitialPlayerStats(Connection connection, String username) throws SQLException {
-        try (PreparedStatement statement = connection.prepareStatement("INSERT INTO PlayerStats(username, goldCollected, ranking) VALUES (?, ?, ?)")) {
-
-            // Set the values for username, initial gold, and initial rank
+        // Not used anymore; we insert PlayerStats in the transaction above.
+        try (PreparedStatement statement = connection.prepareStatement(
+                "INSERT INTO PlayerStats(username, goldCollected, ranking) VALUES (?, ?, ?)")) {
             statement.setString(1, username);
-            statement.setInt(2, 0);  // Initial gold (you can set it to whatever default gold value you want)
-            statement.setInt(3, 0);  // Initial rank (you can set it to whatever default rank you want)
-
+            statement.setInt(2, 0);
+            statement.setInt(3, 0);
             statement.executeUpdate();
         }
     }
 
     private boolean isUsernameExists(String username) {
-        try (Connection connection = DriverManager.getConnection(JDBC_URL);
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM PlayerCredentials WHERE username = ?")) {
-
+        String sql = "SELECT 1 FROM PlayerCredentials WHERE username = ?";
+        try (Connection connection = DatabaseConnector.connect();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, username);
-
-            ResultSet resultSet = statement.executeQuery();
-            return resultSet.next(); // Returns true if the username exists
-
+            try (ResultSet rs = statement.executeQuery()) {
+                return rs.next();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle the exception appropriately
-            return true; // Assume username exists in case of an error
+            return true; // be conservative on error
         }
     }
 
@@ -118,5 +106,4 @@ public class Badlogin {
         this.username = username;
         this.pin = pin;
     }
-
 }

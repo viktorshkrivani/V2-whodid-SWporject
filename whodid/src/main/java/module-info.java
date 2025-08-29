@@ -4,8 +4,7 @@ module com.example.whodid {
     requires java.desktop;
     requires java.sql; // Add this line to include the java.sql module
 
-
-
+    requires org.xerial.sqlitejdbc;
 
 
     opens com.example.whodid to javafx.fxml;
