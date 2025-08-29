@@ -15,7 +15,7 @@ The result is a unique survival-slot hybrid: each spin can reward you with gold,
 ## Documentation 📄
 
 Full project report (design, implementation details, and diagrams),  
-[Final Report (PDF)](./WHO%20DID-Final%20Report.pdf)
+[Final Report (PDF)](./WHO%20DID-Final%20Report.docx%20(1).pdf)
 
 ## Game Screenshots
 
