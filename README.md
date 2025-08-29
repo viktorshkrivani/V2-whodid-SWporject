@@ -14,7 +14,7 @@ The result is a unique survival-slot hybrid: each spin can reward you with gold,
 
 ## Documentation 📄
 Group Presentation   
-[Presentation PowerPoint](./GR5.ppxt)
+[Presentation PowerPoint](./GR5.pptx)
 
 Full project report (design, implementation details, and diagrams),  
 [Final Report (PDF)](./assets/finalreport.pdf)
